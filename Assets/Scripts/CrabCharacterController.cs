@@ -27,24 +27,40 @@ public class CrabCharacterController : MonoBehaviour
     //{
 
     //}
+    [SerializeField] private float mouseSens;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float throwHeight;
 
     private Vector2 moveDir;
     private float jumpVal;
+    private Transform cameraLookAt;
+    private Vector3 cameraLookAtPos;
 
-    private Vector3 playerVelocity;
+    private Vector2 lookDir;
     private bool groundedPlayer;
     private float gravityValue = Physics.gravity.y;
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible= false;
 
+        cameraLookAt = transform.GetChild(1);
     }
 
     void Update()
     {
+        //Using mouse to rotate player
+        float yRot = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSens;
+        float xRot = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSens;
+        yRot = Mathf.Clamp(yRot, -30, 30);
+        //Rotate only cam on Y axis
+        //if (yRot != 0)
+            Camera.main.transform.Rotate(new Vector3(yRot, 0, 0), Space.Self);
+        //Rotate player on X axis
+        if (xRot != 0) //Looking Around
+            transform.Rotate(new Vector3(0, xRot, 0), Space.World);
 
         if (groundedPlayer)
         {
@@ -126,6 +142,7 @@ public class CrabCharacterController : MonoBehaviour
                 return;
 
             item.transform.position = transform.position + transform.forward * 1.5f;
+            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             item.transform.SetParent(null);
         }
     }
