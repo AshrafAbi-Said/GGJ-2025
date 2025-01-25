@@ -27,38 +27,36 @@ public class CrabCharacterController : MonoBehaviour
     //{
 
     //}
-    private Vector2 moveDir;
+    [SerializeField] private float playerSpeed;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float throwHeight;
 
-    private CharacterController controller;
+    private Vector2 moveDir;
+    private float jumpVal;
+
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
-    private float jumpHeight = 1.0f;
     private float gravityValue = Physics.gravity.y;
 
     private void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
+
     }
 
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+
+        if (groundedPlayer)
         {
-            playerVelocity.y = 0f;
+            jumpVal = 0;
+        }
+        else
+        {
+            jumpVal += gravityValue * Time.deltaTime;
+
         }
 
-        controller.Move(new Vector3(moveDir.x, 0, moveDir.y) * Time.deltaTime * playerSpeed);
-
-        // Makes the player jump
-        //if (Input.GetButtonDown("Jump") && groundedPlayer)
-        //{
-        //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        //}
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        transform.Translate(new Vector3(moveDir.x, jumpVal, moveDir.y) * Time.deltaTime * playerSpeed);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,11 +71,19 @@ public class CrabCharacterController : MonoBehaviour
         else if (collision.gameObject.tag == "Item")
         {
             Debug.Log("PICKED UP");
+            collision.transform.SetParent(transform);
+            collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            collision.transform.position = transform.position + Vector3.up;
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) 
+        {
+            groundedPlayer = true;
         }
     }
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("Stayed with " + collision.gameObject.name);
+        //Debug.Log("Stayed with " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Bubble"))
         {
             //GetComponent<Rigidbody>().isKinematic = true;
@@ -85,14 +91,14 @@ public class CrabCharacterController : MonoBehaviour
 
         }
     }
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Bubble"))
-    //    {
-    //        Debug.Log("Exited " + collision.gameObject.name);
-    //        transform.parent = null;
-    //    }
-    //}
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Debug.Log("Exited " + collision.gameObject.name);
+            groundedPlayer = false;
+        }
+    }
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -105,8 +111,38 @@ public class CrabCharacterController : MonoBehaviour
         if (context.started && groundedPlayer)
         {
             Debug.Log("Jump");
-            //groundedPlayer = false;
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            groundedPlayer = false;
+            jumpVal = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+
+        }
+    }
+
+    public void Drop(InputAction.CallbackContext context) 
+    {
+        if (context.started)
+        {
+            GameObject item = transform.GetComponentInChildren<ItemGO>().gameObject;
+            if (item == null)
+                return;
+
+            item.transform.position = transform.position + transform.forward * 1.5f;
+            item.transform.SetParent(null);
+        }
+    }
+
+    public void Throw (InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Debug.Log("Throw");
+
+            GameObject item = transform.GetComponentInChildren<ItemGO>().gameObject;
+            if (item == null)
+                return;
+
+            item.transform.SetParent(null);
+            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            item.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, Mathf.Sqrt(jumpHeight * -2.0f * gravityValue), 0);
         }
     }
 }

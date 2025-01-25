@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6087771492385349880}
   - component: {fileID: 8818313832015928949}
   - component: {fileID: 7117304469386098013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
