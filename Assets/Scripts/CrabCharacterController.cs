@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CrabCharacterController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class CrabCharacterController : MonoBehaviour
     //{
 
     //}
+    private Vector2 moveDir;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -47,19 +49,13 @@ public class CrabCharacterController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
-        //Debug.Log("move is " + move);
-        //if (move != Vector3.zero)
-        //{
-        //    gameObject.transform.forward = move;
-        //}
+        controller.Move(new Vector3(moveDir.x, 0, moveDir.y) * Time.deltaTime * playerSpeed);
 
         // Makes the player jump
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        }
+        //if (Input.GetButtonDown("Jump") && groundedPlayer)
+        //{
+        //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        //}
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
@@ -73,6 +69,10 @@ public class CrabCharacterController : MonoBehaviour
             //GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = (collision.transform);
 
+        }
+        else if (collision.gameObject.tag == "Item")
+        {
+            Debug.Log("PICKED UP");
         }
     }
     private void OnCollisionStay(Collision collision)
@@ -93,4 +93,20 @@ public class CrabCharacterController : MonoBehaviour
     //        transform.parent = null;
     //    }
     //}
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        moveDir = context.ReadValue<Vector2>().normalized;
+    }
+    
+    public void Jump(InputAction.CallbackContext context)
+    {
+        Debug.Log("Try Jump");
+        if (context.started && groundedPlayer)
+        {
+            Debug.Log("Jump");
+            //groundedPlayer = false;
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        }
+    }
 }
