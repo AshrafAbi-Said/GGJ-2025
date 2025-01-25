@@ -27,13 +27,13 @@ public class BubbleGO : MonoBehaviour
         {
             FloatBubble();
             timeBeforePopping -= (Time.deltaTime + weightMultiplier*weightCarried);
-            Debug.Log("Bubble input before is " + bubbleMaterial.GetColor("_External_Color"));
-            Debug.Log("Bubble input before is " + bubbleMaterial.GetColor("_Internal_Color"));
+            //Debug.Log("Bubble input before is " + bubbleMaterial.GetColor("_External_Color"));
+            //Debug.Log("Bubble input before is " + bubbleMaterial.GetColor("_Internal_Color"));
             float colorVal = (totalTimeBeforePop - timeBeforePopping)/totalTimeBeforePop;
             bubbleMaterial.SetColor("_External_Color", Color.Lerp(Color.green, Color.red, colorVal));
             bubbleMaterial.SetColor("_Internal_Color", Color.Lerp(Color.blue, Color.red, colorVal));
-            Debug.Log("Bubble input after is " + bubbleMaterial.GetColor("_External_Color"));
-            Debug.Log("Bubble input after is " + bubbleMaterial.GetColor("_Internal_Color"));
+            //Debug.Log("Bubble input after is " + bubbleMaterial.GetColor("_External_Color"));
+            //Debug.Log("Bubble input after is " + bubbleMaterial.GetColor("_Internal_Color"));
 
         }
         else

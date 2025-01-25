@@ -3,8 +3,10 @@ using UnityEngine;
 public class ItemGO : MonoBehaviour
 {
     public MaterialType matType;
+    public bool isGrabbed;
 
-    private float itemWeight;
+    [HideInInspector] public float itemWeight;
+    
     [SerializeField] private bool fallThroughBubbles;
 
     public enum MaterialType
@@ -24,6 +26,7 @@ public class ItemGO : MonoBehaviour
     void Start()
     {
         fallThroughBubbles = false;
+        isGrabbed = false;
     }
 
     // Update is called once per frame
@@ -31,22 +34,22 @@ public class ItemGO : MonoBehaviour
     {
 
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Bubble" && fallThroughBubbles)
-    //    {
-    //        collision.gameObject.SetActive(false);
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isGrabbed && collision.gameObject.tag == "Bubble" && fallThroughBubbles)
+        {
+            collision.gameObject.SetActive(false);
+        }
+    }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Bubble" && !fallThroughBubbles)
-    //    {
-    //        fallThroughBubbles = true;
-    //        //GetComponent<BoxCollider>().excludeLayers = LayerMask.GetMask("Ground");
-    //    }
-    //}
+    private void OnCollisionExit(Collision collision)
+    {
+        if (!isGrabbed && collision.gameObject.tag == "Bubble" && !fallThroughBubbles)
+        {
+            fallThroughBubbles = true;
+            //GetComponent<BoxCollider>().excludeLayers = LayerMask.GetMask("Ground");
+        }
+    }
 
     public void SetType(MaterialType type)
     {
@@ -55,6 +58,7 @@ public class ItemGO : MonoBehaviour
             type == MaterialType.BagOfChips)
         {
             //set light weight
+            itemWeight = 2;
         }
         else if(type == MaterialType.Shell ||
             type == MaterialType.Clam ||
@@ -62,12 +66,14 @@ public class ItemGO : MonoBehaviour
             type == MaterialType.Coral) 
         {
             //set medium weight
+            itemWeight = 5;
         }
         else if(type == MaterialType.GlassBottle ||
             type == MaterialType.Treasure ||
             type == MaterialType.LGDGamersOnly) 
         {
             //set heavy weight
+            itemWeight = 7;
         }
     }
 }
