@@ -51,16 +51,7 @@ public class CrabCharacterController : MonoBehaviour
 
     void Update()
     {
-        //Using mouse to rotate player
-        float yRot = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSens;
-        float xRot = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSens;
-        yRot = Mathf.Clamp(yRot, -30, 30);
-        //Rotate only cam on Y axis
-        //if (yRot != 0)
-            Camera.main.transform.Rotate(new Vector3(yRot, 0, 0), Space.Self);
-        //Rotate player on X axis
-        if (xRot != 0) //Looking Around
-            transform.Rotate(new Vector3(0, xRot, 0), Space.World);
+        transform.forward = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized;
 
         if (groundedPlayer)
         {
