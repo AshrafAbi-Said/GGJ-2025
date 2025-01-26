@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour
     public void RemoveItemNeeded(ItemGO item)
     {
         itemNeeded.Remove(item.matType);
+        CheckIfWon();
     }
 
     public List<ItemGO.MaterialType> GetItemsNeeded()
@@ -46,4 +47,11 @@ public class LevelManager : MonoBehaviour
         return itemNeeded;
     }
 
+    private void CheckIfWon()
+    {
+        if(itemNeeded.Count == 0)
+        {
+            Debug.Log("You Win!");
+        }
+    }
 }
