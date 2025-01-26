@@ -11,6 +11,8 @@ public class BubbleGO : MonoBehaviour
     float weightCarried;
     [SerializeField] Material bubbleMaterial;
     [SerializeField] GameObject particlesGO;
+
+    public ItemGO itemOnBubble;
     void Start()
     {
         weightCarried = 0;
@@ -24,6 +26,7 @@ public class BubbleGO : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(weightCarried);
         if (timeBeforePopping > 0)
         {
             FloatBubble();
@@ -39,6 +42,12 @@ public class BubbleGO : MonoBehaviour
         }
         else
         {
+            if (itemOnBubble != null)
+            {
+                itemOnBubble.fallThroughBubbles = true;
+                AddWeightCarried(-itemOnBubble.itemWeight);
+            }
+
             particlesGO.SetActive(true);
             Destroy(particlesGO, 2);
             transform.DetachChildren();
@@ -50,9 +59,9 @@ public class BubbleGO : MonoBehaviour
     {
         bubbleRb.linearVelocity = bubbleDirection * bubbleSpeed;
     }
-    public void SetWeightCarried(float weight)
+    public void AddWeightCarried(float weight)
     {
-        weightCarried = weight;
+        weightCarried += weight;
     }
     public void AddSuddenWeight(float addedWeight)
     {

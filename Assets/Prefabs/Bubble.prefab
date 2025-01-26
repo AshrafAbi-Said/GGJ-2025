@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3203225615178587688}
   - component: {fileID: 7453458027220518248}
   - component: {fileID: 1107077224230308218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 6087771492385349880}
   - component: {fileID: 8818313832015928949}
   - component: {fileID: -3672716809766763576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}

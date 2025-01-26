@@ -3,11 +3,12 @@ using UnityEngine;
 public class ItemGO : MonoBehaviour
 {
     public MaterialType matType;
+    public float spawnChance;
     public bool isGrabbed;
 
     [HideInInspector] public float itemWeight;
     
-    [SerializeField] private bool fallThroughBubbles;
+    public bool fallThroughBubbles;
 
     public enum MaterialType
     {
@@ -25,6 +26,7 @@ public class ItemGO : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SetType(matType);
         fallThroughBubbles = false;
         isGrabbed = false;
     }
@@ -32,13 +34,25 @@ public class ItemGO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(isGrabbed)
+        {
+            fallThroughBubbles = false;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isGrabbed && collision.gameObject.tag == "Bubble" && fallThroughBubbles)
+        if(!isGrabbed && collision.gameObject.tag == "Bubble")
         {
-            collision.gameObject.SetActive(false);
+            if (fallThroughBubbles)
+            {
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                collision.transform.GetComponent<BubbleGO>().AddWeightCarried(itemWeight);
+                collision.transform.GetComponent<BubbleGO>().itemOnBubble = this;
+            }
+
         }
     }
 
@@ -47,6 +61,7 @@ public class ItemGO : MonoBehaviour
         if (!isGrabbed && collision.gameObject.tag == "Bubble" && !fallThroughBubbles)
         {
             fallThroughBubbles = true;
+            collision.transform.GetComponent<BubbleGO>().AddWeightCarried(-itemWeight);
             //GetComponent<BoxCollider>().excludeLayers = LayerMask.GetMask("Ground");
         }
     }

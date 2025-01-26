@@ -3,30 +3,6 @@ using UnityEngine.InputSystem;
 
 public class CrabCharacterController : MonoBehaviour
 {
-    //[SerializeField] float speed = 10f;
-    //[SerializeField] float jumpPower = 10f;
-    //Rigidbody characterRb;
-    //void Start()
-    //{
-    //    characterRb = GetComponent<Rigidbody>();
-    //}
-
-    //void Update()
-    //{
-    //    Move();
-    //}
-
-
-    //private void Move()
-    //{
-    //    characterRb.linearVelocity = (Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward + new Vector3(0, characterRb.linearVelocity.y, 0)).normalized * speed;
-    //    Debug.Log("Velocity " + characterRb.linearVelocity);
-
-    //}
-    //void Jump()
-    //{
-
-    //}
     [SerializeField] private float playerForwardForce;
     [SerializeField] private float maxPlayerSpeedGrounded;
     [SerializeField] private float maxPlayerSpeedFalling;
@@ -68,29 +44,29 @@ public class CrabCharacterController : MonoBehaviour
 
         groundedPlayer = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, LayerMask.GetMask("Ground"));
 
-        if (groundedPlayer)
-        {
-            timeSinceFalling = 0;
-            rb.linearDamping = groundDrag;
-            rb.maxLinearVelocity = maxPlayerSpeedGrounded;
-        }
-        else
-        {
-            timeSinceFalling += Time.deltaTime;
+        //if (groundedPlayer)
+        //{
+        //    timeSinceFalling = 0;
+        //    rb.linearDamping = groundDrag;
+        //    rb.maxLinearVelocity = maxPlayerSpeedGrounded;
+        //}
+        //else
+        //{
+        //    timeSinceFalling += Time.deltaTime;
 
-            rb.linearDamping = airDrag;
-            if (timeSinceFalling >= 3)
-            {
-                rb.maxLinearVelocity = maxPlayerSpeedFalling;
-            }
+        //    rb.linearDamping = airDrag;
+        //    //if (timeSinceFalling >= 3)
+        //    {
+        //        rb.maxLinearVelocity = maxPlayerSpeedFalling;
+        //    }
 
-        }
+        //}
+
+        Debug.Log("Crab weight: " + weight);
 
 
         moveDir = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
         rb.AddForce(moveDir * playerForwardForce, ForceMode.Force);
-
-        Debug.Log(rb.linearVelocity.magnitude);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -100,17 +76,22 @@ public class CrabCharacterController : MonoBehaviour
         {
             //GetComponent<Rigidbody>().isKinematic = true;
             //transform.parent = (collision.transform);
-            collision.transform.GetComponent<BubbleGO>().AddSuddenWeight(weight);
+            collision.transform.GetComponent<BubbleGO>().AddSuddenWeight(weight); 
+            collision.transform.GetComponent<BubbleGO>().AddWeightCarried(weight);
+
 
         }
         else if (collision.gameObject.tag == "Item")
         {
             Debug.Log("PICKED UP");
-            weight += collision.transform.GetComponent<ItemGO>().itemWeight;
+            if(!collision.transform.GetComponent<ItemGO>().isGrabbed)
+            {
+                weight += collision.transform.GetComponent<ItemGO>().itemWeight;
+                collision.transform.GetComponent<ItemGO>().isGrabbed = true;
+            }
             collision.transform.SetParent(transform);
             collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             collision.transform.position = transform.position + Vector3.up;
-            collision.transform.GetComponent<ItemGO>().isGrabbed = true;
         }
 
         //if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) 
@@ -118,25 +99,24 @@ public class CrabCharacterController : MonoBehaviour
         //    groundedPlayer = true;
         //}
     }
-    private void OnCollisionStay(Collision collision)
-    {
-        //Debug.Log("Stayed with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Bubble"))
-        {
-            //GetComponent<Rigidbody>().isKinematic = true;
-            //transform.parent = (collision.transform);
-            collision.transform.GetComponent<BubbleGO>().SetWeightCarried(weight);
-
-        }
-    }
-    //private void OnCollisionExit(Collision collision)
+    //private void OnCollisionStay(Collision collision)
     //{
-    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+    //    //Debug.Log("Stayed with " + collision.gameObject.name);
+    //    if (collision.gameObject.CompareTag("Bubble"))
     //    {
-    //        Debug.Log("Exited " + collision.gameObject.name);
-    //        groundedPlayer = false;
+    //        //GetComponent<Rigidbody>().isKinematic = true;
+    //        //transform.parent = (collision.transform);
+
     //    }
     //}
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bubble")
+        {
+            Debug.Log("Exited " + collision.gameObject.name);
+            collision.transform.GetComponent<BubbleGO>().AddWeightCarried(-weight);
+        }
+    }
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -147,7 +127,6 @@ public class CrabCharacterController : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         //Jump cancelation
-        rb.linearDamping = 0;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
 
         Debug.Log("Try Jump");
