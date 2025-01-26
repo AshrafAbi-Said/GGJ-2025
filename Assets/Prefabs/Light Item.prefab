@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5496fa4458698428aa302c53989ad35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matType: 0
+  matType: 1
   spawnChance: 0
   isGrabbed: 0
   itemWeight: 0

@@ -15,13 +15,9 @@ public class ItemGO : MonoBehaviour
     public enum MaterialType
     {
         Shell,
-        Clam,
-        Seaweed,
         Can,
         GlassBottle,
         PlasticBottle,
-        Treasure,
-        Coral,
         BagOfChips,
         LGDGamersOnly
     }
@@ -87,23 +83,19 @@ public class ItemGO : MonoBehaviour
 
     public void SetType(MaterialType type)
     {
-        if (type == MaterialType.Seaweed ||
-            type == MaterialType.Can ||
+        if (type == MaterialType.Can ||
             type == MaterialType.BagOfChips)
         {
             //set light weight
             itemWeight = 2;
         }
         else if(type == MaterialType.Shell ||
-            type == MaterialType.Clam ||
-            type == MaterialType.PlasticBottle ||
-            type == MaterialType.Coral) 
+            type == MaterialType.PlasticBottle) 
         {
             //set medium weight
             itemWeight = 5;
         }
         else if(type == MaterialType.GlassBottle ||
-            type == MaterialType.Treasure ||
             type == MaterialType.LGDGamersOnly) 
         {
             //set heavy weight
