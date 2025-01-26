@@ -52,7 +52,7 @@ public class ItemGO : MonoBehaviour
                 collision.transform.GetComponent<BubbleGO>().AddWeightCarried(itemWeight);
                 collision.transform.GetComponent<BubbleGO>().itemOnBubble = this;
             }
-            if (collision.gameObject.CompareTag("Ground"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 VFXItem.SetActive(true);
             }
@@ -82,7 +82,7 @@ public class ItemGO : MonoBehaviour
             collision.transform.GetComponent<BubbleGO>().AddWeightCarried(-itemWeight);
             //GetComponent<BoxCollider>().excludeLayers = LayerMask.GetMask("Ground");
         }
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             VFXItem.SetActive(false);
         }
