@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3203225615178587688}
   - component: {fileID: 7453458027220518248}
   - component: {fileID: 1107077224230308218}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 6087771492385349880}
   - component: {fileID: 8818313832015928949}
   - component: {fileID: -3672716809766763576}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Bubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
@@ -5056,6 +5056,7 @@ MonoBehaviour:
   weightMultiplier: 0
   bubbleMaterial: {fileID: 2100000, guid: 80ee472b82e614ef9b2c6acbfccbb401, type: 2}
   particlesGO: {fileID: 6575877479609883784}
+  itemOnBubble: {fileID: 0}
 --- !u!65 &-3672716809766763576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5069,7 +5070,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 246
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
