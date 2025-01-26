@@ -12,6 +12,7 @@ public class CrabCharacterController : MonoBehaviour
 
     [SerializeField] private Transform playerFollower;
 
+    private Animator anim;
     private Vector3 moveDir;
     //private float jumpVal;
     private Rigidbody rb;
@@ -25,6 +26,8 @@ public class CrabCharacterController : MonoBehaviour
         Cursor.visible= false;
 
         rb = GetComponent<Rigidbody>();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -37,6 +40,15 @@ public class CrabCharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         groundedPlayer = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, LayerMask.GetMask("Ground"));
+
+        if (groundedPlayer)
+        {
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
 
         //if (groundedPlayer)
         //{
@@ -86,12 +98,13 @@ public class CrabCharacterController : MonoBehaviour
             Debug.Log("PICKED UP");
             if(!collision.transform.GetComponent<ItemGO>().isGrabbed)
             {
+                anim.SetBool("isGrabbing", true);
                 weight += collision.transform.GetComponent<ItemGO>().itemWeight;
                 collision.transform.GetComponent<ItemGO>().isGrabbed = true;
+                collision.transform.SetParent(transform);
+                collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+                collision.transform.position = transform.position + Vector3.up;
             }
-            collision.transform.SetParent(transform);
-            collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            collision.transform.position = transform.position + Vector3.up;
         }
 
         //if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) 
@@ -126,6 +139,11 @@ public class CrabCharacterController : MonoBehaviour
         if(context.canceled)
         {
             rb.linearVelocity = Vector3.zero;
+            anim.SetBool("isMoving", false);
+        }
+        else
+        {
+            anim.SetBool("isMoving", true);
         }
     }
     
@@ -153,6 +171,8 @@ public class CrabCharacterController : MonoBehaviour
             if (item == null)
                 return;
 
+
+            anim.SetBool("isGrabbing", false);
             weight -= item.GetComponent<ItemGO>().itemWeight;
             item.GetComponent<ItemGO>().isGrabbed = false;
             item.transform.position = transform.position + transform.forward * 1.5f;
@@ -171,6 +191,7 @@ public class CrabCharacterController : MonoBehaviour
             if (item == null)
                 return;
 
+            anim.SetBool("isGrabbing", false);
             weight -= item.GetComponent<ItemGO>().itemWeight;
             item.GetComponent<ItemGO>().isGrabbed = false;
             item.transform.SetParent(null);
