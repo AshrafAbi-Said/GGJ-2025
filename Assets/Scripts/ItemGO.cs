@@ -5,7 +5,7 @@ public class ItemGO : MonoBehaviour
     public MaterialType matType;
     public float spawnChance;
     public bool isGrabbed;
-
+    [SerializeField] GameObject VFXItem;
     [HideInInspector] public float itemWeight;
     
     public bool fallThroughBubbles;
@@ -52,7 +52,10 @@ public class ItemGO : MonoBehaviour
                 collision.transform.GetComponent<BubbleGO>().AddWeightCarried(itemWeight);
                 collision.transform.GetComponent<BubbleGO>().itemOnBubble = this;
             }
-
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                VFXItem.SetActive(true);
+            }
         }
 
         //if (!isGrabbed && collision.gameObject.tag == "Building")
@@ -78,6 +81,10 @@ public class ItemGO : MonoBehaviour
             fallThroughBubbles = true;
             collision.transform.GetComponent<BubbleGO>().AddWeightCarried(-itemWeight);
             //GetComponent<BoxCollider>().excludeLayers = LayerMask.GetMask("Ground");
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            VFXItem.SetActive(false);
         }
     }
 
