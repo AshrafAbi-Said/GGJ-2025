@@ -10,6 +10,8 @@ public class CrabCharacterController : MonoBehaviour
     [SerializeField] private float throwHeight;
     [SerializeField] private float weight;
 
+    [SerializeField] private Transform playerFollower;
+
     private Vector3 moveDir;
     //private float jumpVal;
     private Rigidbody rb;
@@ -23,7 +25,6 @@ public class CrabCharacterController : MonoBehaviour
         Cursor.visible= false;
 
         rb = GetComponent<Rigidbody>();
-        rb.maxLinearVelocity = maxPlayerSpeedGrounded;
     }
 
     void Update()
