@@ -61,11 +61,12 @@ public class CrabCharacterController : MonoBehaviour
             rb.linearVelocity.y,
             Mathf.Clamp(rb.linearVelocity.z, -maxPlayerSpeedGrounded, maxPlayerSpeedGrounded));
 
-        Debug.Log("Crab weight: " + weight);
-
 
         moveDir = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
         rb.AddForce(moveDir * playerForwardForce, ForceMode.Force);
+
+        Debug.Log("forward: " + transform.forward + " right: " + transform.right);
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -121,6 +122,11 @@ public class CrabCharacterController : MonoBehaviour
     {
         //Vector2 inputs = context.ReadValue<Vector2>().normalized;
         //moveDir = transform.forward * inputs.y + transform.right * inputs.x;
+
+        if(context.canceled)
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
     }
     
     public void Jump(InputAction.CallbackContext context)

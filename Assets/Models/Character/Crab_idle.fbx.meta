@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 960c558daedaf554d8108a1f568d75aa
+guid: 1aea2225006e2f04db91b9f414364b44
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Anim_Run
-      takeName: Anim_Run
-      internalID: 4096065231925978380
-      firstFrame: 0
-      lastFrame: 19
+      name: Crab_idle
+      takeName: Crab_idle
+      internalID: 6946114587671731894
+      firstFrame: -1
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
