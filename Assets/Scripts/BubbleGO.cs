@@ -8,11 +8,12 @@ public class BubbleGO : MonoBehaviour
     public float timeBeforePopping = 3;
     float totalTimeBeforePop;
     [SerializeField] float weightMultiplier;
-    private float weightCarried;
+    float weightCarried;
     [SerializeField] Material bubbleMaterial;
     [SerializeField] GameObject particlesGO;
     void Start()
     {
+        weightCarried = 0;
         bubbleRb = GetComponent<Rigidbody>();
         bubbleDirection = Vector3.up;
         bubbleMaterial = GetComponent<Renderer>().material;

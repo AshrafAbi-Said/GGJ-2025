@@ -4914,6 +4914,7 @@ GameObject:
   - component: {fileID: 7047228967653298236}
   - component: {fileID: 6087771492385349880}
   - component: {fileID: 8818313832015928949}
+  - component: {fileID: -3672716809766763576}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Bubble
@@ -5007,7 +5008,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -5055,3 +5056,24 @@ MonoBehaviour:
   weightMultiplier: 0
   bubbleMaterial: {fileID: 2100000, guid: 80ee472b82e614ef9b2c6acbfccbb401, type: 2}
   particlesGO: {fileID: 6575877479609883784}
+--- !u!65 &-3672716809766763576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639881995976377198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

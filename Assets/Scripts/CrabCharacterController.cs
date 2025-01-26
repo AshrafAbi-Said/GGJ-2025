@@ -99,7 +99,8 @@ public class CrabCharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Bubble"))
         {
             //GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = (collision.transform);
+            //transform.parent = (collision.transform);
+            collision.transform.GetComponent<BubbleGO>().AddSuddenWeight(weight);
 
         }
         else if (collision.gameObject.tag == "Item")
@@ -123,7 +124,8 @@ public class CrabCharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Bubble"))
         {
             //GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = (collision.transform);
+            //transform.parent = (collision.transform);
+            collision.transform.GetComponent<BubbleGO>().SetWeightCarried(weight);
 
         }
     }
@@ -167,6 +169,7 @@ public class CrabCharacterController : MonoBehaviour
             if (item == null)
                 return;
 
+            weight -= item.GetComponent<ItemGO>().itemWeight;
             item.GetComponent<ItemGO>().isGrabbed = false;
             item.transform.position = transform.position + transform.forward * 1.5f;
             item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -184,10 +187,11 @@ public class CrabCharacterController : MonoBehaviour
             if (item == null)
                 return;
 
+            weight -= item.GetComponent<ItemGO>().itemWeight;
             item.GetComponent<ItemGO>().isGrabbed = false;
             item.transform.SetParent(null);
             item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            item.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, Mathf.Sqrt(jumpHeight * -2.0f * gravityValue), 0);
+            item.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, Mathf.Sqrt(throwHeight * -2.0f * gravityValue), 0);
         }
     }
 }
