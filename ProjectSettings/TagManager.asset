@@ -5,14 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bubble
+  - Item
+  - Floor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - camignore
+  - Ground
   - 
   - 
   - 

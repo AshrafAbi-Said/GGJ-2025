@@ -1,68 +1,72 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CrabCharacterController : MonoBehaviour
 {
-    //[SerializeField] float speed = 10f;
-    //[SerializeField] float jumpPower = 10f;
-    //Rigidbody characterRb;
-    //void Start()
-    //{
-    //    characterRb = GetComponent<Rigidbody>();
-    //}
+    [SerializeField] private float playerForwardForce;
+    [SerializeField] private float maxPlayerSpeedGrounded;
+    [SerializeField] private float playerHeight;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float throwHeight;
+    [SerializeField] private float weight;
 
-    //void Update()
-    //{
-    //    Move();
-    //}
+    [SerializeField] private Transform playerFollower;
 
+    private Vector3 moveDir;
+    //private float jumpVal;
+    private Rigidbody rb;
 
-    //private void Move()
-    //{
-    //    characterRb.linearVelocity = (Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward + new Vector3(0, characterRb.linearVelocity.y, 0)).normalized * speed;
-    //    Debug.Log("Velocity " + characterRb.linearVelocity);
-
-    //}
-    //void Jump()
-    //{
-
-    //}
-
-    private CharacterController controller;
-    private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
-    private float jumpHeight = 1.0f;
     private float gravityValue = Physics.gravity.y;
 
     private void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible= false;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
+        //transform.Translate(new Vector3(moveDir.x, jumpVal, moveDir.y) * Time.deltaTime * playerSpeed);
+    }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
-        //Debug.Log("move is " + move);
-        //if (move != Vector3.zero)
+    private void FixedUpdate()
+    {
+        transform.forward = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized;
+
+
+        groundedPlayer = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, LayerMask.GetMask("Ground"));
+
+        //if (groundedPlayer)
         //{
-        //    gameObject.transform.forward = move;
+        //    timeSinceFalling = 0;
+        //    rb.linearDamping = groundDrag;
+        //    rb.maxLinearVelocity = maxPlayerSpeedGrounded;
+        //}
+        //else
+        //{
+        //    timeSinceFalling += Time.deltaTime;
+
+        //    rb.linearDamping = airDrag;
+        //    //if (timeSinceFalling >= 3)
+        //    {
+        //        rb.maxLinearVelocity = maxPlayerSpeedFalling;
+        //    }
+
         //}
 
-        // Makes the player jump
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        }
+        rb.linearVelocity = new Vector3(
+            Mathf.Clamp(rb.linearVelocity.x, -maxPlayerSpeedGrounded, maxPlayerSpeedGrounded),
+            rb.linearVelocity.y,
+            Mathf.Clamp(rb.linearVelocity.z, -maxPlayerSpeedGrounded, maxPlayerSpeedGrounded));
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        Debug.Log("Crab weight: " + weight);
+
+
+        moveDir = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
+        rb.AddForce(moveDir * playerForwardForce, ForceMode.Force);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -71,26 +75,102 @@ public class CrabCharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Bubble"))
         {
             //GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = (collision.transform);
+            //transform.parent = (collision.transform);
+            collision.transform.GetComponent<BubbleGO>().AddSuddenWeight(weight); 
+            collision.transform.GetComponent<BubbleGO>().AddWeightCarried(weight);
+
 
         }
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        Debug.Log("Stayed with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Bubble"))
+        else if (collision.gameObject.tag == "Item")
         {
-            //GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = (collision.transform);
-
+            Debug.Log("PICKED UP");
+            if(!collision.transform.GetComponent<ItemGO>().isGrabbed)
+            {
+                weight += collision.transform.GetComponent<ItemGO>().itemWeight;
+                collision.transform.GetComponent<ItemGO>().isGrabbed = true;
+            }
+            collision.transform.SetParent(transform);
+            collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            collision.transform.position = transform.position + Vector3.up;
         }
+
+        //if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) 
+        //{
+        //    groundedPlayer = true;
+        //}
     }
-    //private void OnCollisionExit(Collision collision)
+    //private void OnCollisionStay(Collision collision)
     //{
+    //    //Debug.Log("Stayed with " + collision.gameObject.name);
     //    if (collision.gameObject.CompareTag("Bubble"))
     //    {
-    //        Debug.Log("Exited " + collision.gameObject.name);
-    //        transform.parent = null;
+    //        //GetComponent<Rigidbody>().isKinematic = true;
+    //        //transform.parent = (collision.transform);
+
     //    }
     //}
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bubble")
+        {
+            Debug.Log("Exited " + collision.gameObject.name);
+            collision.transform.GetComponent<BubbleGO>().AddWeightCarried(-weight);
+        }
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        //Vector2 inputs = context.ReadValue<Vector2>().normalized;
+        //moveDir = transform.forward * inputs.y + transform.right * inputs.x;
+    }
+    
+    public void Jump(InputAction.CallbackContext context)
+    {
+        //Jump cancelation
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+
+        Debug.Log("Try Jump");
+        if (context.started && groundedPlayer)
+        {
+            Debug.Log("Jump");
+            rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+            //groundedPlayer = false;
+            //jumpVal = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+
+        }
+    }
+
+    public void Drop(InputAction.CallbackContext context) 
+    {
+        if (context.started)
+        {
+            GameObject item = transform.GetComponentInChildren<ItemGO>().gameObject;
+            if (item == null)
+                return;
+
+            weight -= item.GetComponent<ItemGO>().itemWeight;
+            item.GetComponent<ItemGO>().isGrabbed = false;
+            item.transform.position = transform.position + transform.forward * 1.5f;
+            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            item.transform.SetParent(null);
+        }
+    }
+
+    public void Throw (InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Debug.Log("Throw");
+
+            GameObject item = transform.GetComponentInChildren<ItemGO>().gameObject;
+            if (item == null)
+                return;
+
+            weight -= item.GetComponent<ItemGO>().itemWeight;
+            item.GetComponent<ItemGO>().isGrabbed = false;
+            item.transform.SetParent(null);
+            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            item.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, Mathf.Sqrt(throwHeight * -2.0f * gravityValue), 0);
+        }
+    }
 }
