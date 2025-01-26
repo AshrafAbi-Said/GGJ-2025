@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3180292307713069873}
   - component: {fileID: 5264138556812202324}
   - component: {fileID: 5690656646836942948}
+  - component: {fileID: 510112581028854834}
   m_Layer: 0
   m_Name: coral19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3180292307713069873
 Transform:
@@ -86,6 +87,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &510112581028854834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376608562896735150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03351915, y: 0.036984008, z: 0.0323584}
+  m_Center: {x: 0.000000002298163, y: 0.016636444, z: 0}
 --- !u!1 &435412711663366963
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +124,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8042983691396816746
 Transform:
@@ -113,11 +135,11 @@ Transform:
   m_GameObject: {fileID: 435412711663366963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1297085160986066572
 MeshFilter:
@@ -183,12 +205,13 @@ GameObject:
   - component: {fileID: 2225877769894246267}
   - component: {fileID: 920798015622758814}
   - component: {fileID: 2753483695486401159}
+  - component: {fileID: 3767260532727132962}
   m_Layer: 0
   m_Name: coral14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2225877769894246267
 Transform:
@@ -258,6 +281,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3767260532727132962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669845551509437456}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.041799687, y: 0.02815284, z: 0.041027624}
+  m_Center: {x: -0.00043057464, y: 0.01309859, z: -0.00031247607}
 --- !u!1 &979971938910675636
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,12 +313,13 @@ GameObject:
   - component: {fileID: 2132762299158827445}
   - component: {fileID: 2168253204329411897}
   - component: {fileID: 9125525769268494222}
+  - component: {fileID: 31658817854253480}
   m_Layer: 0
   m_Name: seaweed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2132762299158827445
 Transform:
@@ -344,6 +389,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &31658817854253480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979971938910675636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0049648997, y: 0.0051762606, z: 0.020000001}
+  m_Center: {x: 0.00000023826067, y: 0.0006042266, z: 0.009992945}
 --- !u!1 &1117449310508602165
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +424,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8806063675200365792
 Transform:
@@ -403,12 +469,13 @@ GameObject:
   - component: {fileID: 2458041323740562464}
   - component: {fileID: 1928539695723621119}
   - component: {fileID: 7908269151202030071}
+  - component: {fileID: 1241928596523600620}
   m_Layer: 0
   m_Name: coral26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2458041323740562464
 Transform:
@@ -478,6 +545,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1241928596523600620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157514277655926411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.036344048, y: 0.01444606, z: 0.038619727}
+  m_Center: {x: 0.0019042145, y: 0.0032328912, z: -0.0028179416}
 --- !u!1 &1606439950951067681
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,12 +577,13 @@ GameObject:
   - component: {fileID: 5766799961928391729}
   - component: {fileID: 4231709922563771535}
   - component: {fileID: 7552890112370869109}
+  - component: {fileID: 524251578763565350}
   m_Layer: 0
   m_Name: coral28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5766799961928391729
 Transform:
@@ -564,6 +653,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &524251578763565350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606439950951067681}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0363336, y: 0.017940484, z: 0.036144484}
+  m_Center: {x: -0.0000055264695, y: 0.008297643, z: -0.00010758266}
 --- !u!1 &1791243330048196248
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +690,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5911934202453216499
 Transform:
@@ -591,11 +701,11 @@ Transform:
   m_GameObject: {fileID: 1791243330048196248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6781146682766845471
 MeshFilter:
@@ -664,7 +774,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &567983350835959016
 Transform:
@@ -699,7 +809,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9083467990093265021
 Transform:
@@ -783,7 +893,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &513454224713050847
 Transform:
@@ -818,7 +928,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1991512500077218977
 Transform:
@@ -829,11 +939,11 @@ Transform:
   m_GameObject: {fileID: 2834222391761142689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3670638014431447207
 MeshFilter:
@@ -899,12 +1009,13 @@ GameObject:
   - component: {fileID: 4293138015612047472}
   - component: {fileID: 4502737629856316054}
   - component: {fileID: 648831330036106856}
+  - component: {fileID: 3346696812307094058}
   m_Layer: 0
   m_Name: coral17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4293138015612047472
 Transform:
@@ -974,6 +1085,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3346696812307094058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3070784109279191452}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0457142, y: 0.006146405, z: 0.0540942}
+  m_Center: {x: 0.0021711513, y: 0.0027771425, z: 0.0007042244}
 --- !u!1 &3263433246997512075
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,12 +1117,13 @@ GameObject:
   - component: {fileID: 7177528429233005083}
   - component: {fileID: 8709260611568347862}
   - component: {fileID: 5643040899579317159}
+  - component: {fileID: 512953473579467502}
   m_Layer: 0
   m_Name: Object_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7177528429233005083
 Transform:
@@ -1060,6 +1193,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &512953473579467502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263433246997512075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 81.0249, y: 106.49945, z: 81.0249}
+  m_Center: {x: -2612.0256, y: 104.36775, z: -2221.4788}
 --- !u!1 &3279943190440658694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,12 +1225,13 @@ GameObject:
   - component: {fileID: 6866758433307525186}
   - component: {fileID: 6858308584464151238}
   - component: {fileID: 1924674593694611164}
+  - component: {fileID: 2196938002931608259}
   m_Layer: 0
   m_Name: coral24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6866758433307525186
 Transform:
@@ -1146,6 +1301,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2196938002931608259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3279943190440658694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.04571421, y: 0.0061464114, z: 0.0540942}
+  m_Center: {x: 0.0021730594, y: 0.0027771425, z: 0.000704239}
 --- !u!1 &3363565742363942953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,12 +1333,13 @@ GameObject:
   - component: {fileID: 1816576994225445889}
   - component: {fileID: 1139596312709564149}
   - component: {fileID: 5322659821296855942}
+  - component: {fileID: 7896292270988102984}
   m_Layer: 0
   m_Name: seaweed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1816576994225445889
 Transform:
@@ -1232,6 +1409,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7896292270988102984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363565742363942953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.009790624, y: 0.006753943, z: 0.020000005}
+  m_Center: {x: -0.00000011868257, y: 0.00082844315, z: 0.009935828}
 --- !u!1 &3366688130368736136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,12 +1441,13 @@ GameObject:
   - component: {fileID: 5065265105452798994}
   - component: {fileID: 3344904733072054319}
   - component: {fileID: 7773261881831438229}
+  - component: {fileID: 7914906308102158881}
   m_Layer: 0
   m_Name: seaweed (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5065265105452798994
 Transform:
@@ -1318,6 +1517,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7914906308102158881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366688130368736136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0097906245, y: 0.006753941, z: 0.020000001}
+  m_Center: {x: 9.377219e-10, y: 0.00082820526, z: 0.009935827}
 --- !u!1 &3401236947703912112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,12 +1549,13 @@ GameObject:
   - component: {fileID: 6014705454688540975}
   - component: {fileID: 6099870024705224074}
   - component: {fileID: 1819902375511194743}
+  - component: {fileID: 8154527102498110051}
   m_Layer: 0
   m_Name: coral27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6014705454688540975
 Transform:
@@ -1404,6 +1625,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8154527102498110051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401236947703912112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.034009665, y: 0.019139329, z: 0.03250538}
+  m_Center: {x: -0.0000000027939675, y: 0.0042094393, z: -0.00000047683716}
 --- !u!1 &3473746138352279533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,12 +1657,13 @@ GameObject:
   - component: {fileID: 7171580781535277810}
   - component: {fileID: 8686555257726979888}
   - component: {fileID: 2115037609916679419}
+  - component: {fileID: 2370904641735620396}
   m_Layer: 0
   m_Name: Fish01_can.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7171580781535277810
 Transform:
@@ -1490,6 +1733,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2370904641735620396
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473746138352279533}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7945226046298254523, guid: 6caf4f3e3c7e89d4b9544f5c40da2574, type: 3}
 --- !u!1 &3514237705083688833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,12 +1766,13 @@ GameObject:
   - component: {fileID: 8363426706125199500}
   - component: {fileID: 4315145436892565771}
   - component: {fileID: 8800340077088718492}
+  - component: {fileID: 6607275816862136881}
   m_Layer: 0
   m_Name: coral23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8363426706125199500
 Transform:
@@ -1576,6 +1842,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6607275816862136881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3514237705083688833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.04179969, y: 0.028152842, z: 0.04102763}
+  m_Center: {x: -0.00043058023, y: 0.013098353, z: -0.0003122381}
 --- !u!1 &4034481299511795367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1879,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6119103617630731893
 Transform:
@@ -1603,11 +1890,11 @@ Transform:
   m_GameObject: {fileID: 4034481299511795367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4419568962160277989
 MeshFilter:
@@ -1676,7 +1963,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &325946827205649774
 Transform:
@@ -1695,12 +1982,6 @@ Transform:
   - {fileID: 8806063675200365792}
   - {fileID: 513454224713050847}
   - {fileID: 3145518829253357633}
-  - {fileID: 6119103617630731893}
-  - {fileID: 1991512500077218977}
-  - {fileID: 5628236280769516009}
-  - {fileID: 8434811825955373607}
-  - {fileID: 8042983691396816746}
-  - {fileID: 5911934202453216499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4366015476543868125
@@ -1717,7 +1998,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4497394877550259394
 Transform:
@@ -1747,12 +2028,13 @@ GameObject:
   - component: {fileID: 7437112833224500620}
   - component: {fileID: 2720326356670051337}
   - component: {fileID: 6555957542901418608}
+  - component: {fileID: 1703342470698901588}
   m_Layer: 0
   m_Name: coral10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7437112833224500620
 Transform:
@@ -1822,6 +2104,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1703342470698901588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539404208728823479}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.033519145, y: 0.036984008, z: 0.0323584}
+  m_Center: {x: 0.0000019073486, y: 0.016636444, z: 0}
 --- !u!1 &4833560953205803796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,12 +2136,13 @@ GameObject:
   - component: {fileID: 7262846921313696110}
   - component: {fileID: 1374981043212636132}
   - component: {fileID: 9181434554620735199}
+  - component: {fileID: 3558499598647772409}
   m_Layer: 0
   m_Name: coral20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7262846921313696110
 Transform:
@@ -1908,6 +2212,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3558499598647772409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833560953205803796}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03485477, y: 0.015013836, z: 0.03750954}
+  m_Center: {x: 0.0000000029435938, y: 0.005930968, z: 0.0000000014276853}
 --- !u!1 &4915491256461509771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,12 +2244,13 @@ GameObject:
   - component: {fileID: 6029671745037118304}
   - component: {fileID: 1533024980239425831}
   - component: {fileID: 6665114431456272391}
+  - component: {fileID: 1510973623531476056}
   m_Layer: 0
   m_Name: Object_1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6029671745037118304
 Transform:
@@ -1994,6 +2320,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1510973623531476056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915491256461509771}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 81.0249, y: 106.499435, z: 81.0249}
+  m_Center: {x: -2612.0256, y: 14.687361, z: -2221.4788}
 --- !u!1 &5319392542388647776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,12 +2352,13 @@ GameObject:
   - component: {fileID: 1659206434175232796}
   - component: {fileID: 6754744576116458567}
   - component: {fileID: 9057985503798853426}
+  - component: {fileID: 7755320450603301933}
   m_Layer: 0
   m_Name: coral01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1659206434175232796
 Transform:
@@ -2080,6 +2428,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7755320450603301933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319392542388647776}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.034854747, y: 0.015013833, z: 0.03750954}
+  m_Center: {x: 0.00000190828, y: 0.005930968, z: 0.000000005587936}
 --- !u!1 &5378993031186491257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,12 +2460,13 @@ GameObject:
   - component: {fileID: 2136707426661817707}
   - component: {fileID: 714970547442936903}
   - component: {fileID: 7228567400155343012}
+  - component: {fileID: 2287207223015518765}
   m_Layer: 0
   m_Name: coral25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2136707426661817707
 Transform:
@@ -2166,6 +2536,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2287207223015518765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378993031186491257}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.038164414, y: 0.046095558, z: 0.037059885}
+  m_Center: {x: 0.0000000018626451, y: 0.022401895, z: 0}
 --- !u!1 &6493307444851517633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,12 +2568,13 @@ GameObject:
   - component: {fileID: 5924780388509249890}
   - component: {fileID: 7029810160850455496}
   - component: {fileID: 1814374635121890872}
+  - component: {fileID: 4100072388409907320}
   m_Layer: 0
   m_Name: coral13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5924780388509249890
 Transform:
@@ -2252,6 +2644,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4100072388409907320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493307444851517633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.036344036, y: 0.01444606, z: 0.03861972}
+  m_Center: {x: 0.0019042166, y: 0.0032329042, z: -0.0028160335}
 --- !u!1 &6645365017647897681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,7 +2679,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3145518829253357633
 Transform:
@@ -2280,7 +2693,13 @@ Transform:
   m_LocalPosition: {x: -16006.772, y: -123.49102, z: -2331.6191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6119103617630731893}
+  - {fileID: 1991512500077218977}
+  - {fileID: 5628236280769516009}
+  - {fileID: 8434811825955373607}
+  - {fileID: 8042983691396816746}
+  - {fileID: 5911934202453216499}
   m_Father: {fileID: 325946827205649774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6733440005602077051
@@ -2299,7 +2718,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5628236280769516009
 Transform:
@@ -2310,11 +2729,11 @@ Transform:
   m_GameObject: {fileID: 6733440005602077051}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3600892200225262613
 MeshFilter:
@@ -2380,12 +2799,13 @@ GameObject:
   - component: {fileID: 926994229794672290}
   - component: {fileID: 8961957285637466869}
   - component: {fileID: 5826764661319896497}
+  - component: {fileID: 7442397209667899068}
   m_Layer: 0
   m_Name: coral18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &926994229794672290
 Transform:
@@ -2455,6 +2875,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7442397209667899068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554626207908163844}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031219343, y: 0.019628443, z: 0.04117027}
+  m_Center: {x: -0.0029597105, y: 0.006914844, z: 0.00016410412}
 --- !u!1 &8066267787849747551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,7 +2912,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8434811825955373607
 Transform:
@@ -2482,11 +2923,11 @@ Transform:
   m_GameObject: {fileID: 8066267787849747551}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2451.2275, y: -123.49102, z: 158.98096}
+  m_LocalPosition: {x: 18458, y: 0, z: 2490.6}
   m_LocalScale: {x: 1, y: 1, z: 0.12743}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 325946827205649774}
+  m_Father: {fileID: 3145518829253357633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8024534369073394174
 MeshFilter:
@@ -2557,7 +2998,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4784398421290239002
 Transform:
