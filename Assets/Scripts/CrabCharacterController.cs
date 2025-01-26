@@ -29,14 +29,13 @@ public class CrabCharacterController : MonoBehaviour
 
     void Update()
     {
+        transform.forward = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized;
+
         //transform.Translate(new Vector3(moveDir.x, jumpVal, moveDir.y) * Time.deltaTime * playerSpeed);
     }
 
     private void FixedUpdate()
     {
-        transform.forward = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized;
-
-
         groundedPlayer = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, LayerMask.GetMask("Ground"));
 
         //if (groundedPlayer)

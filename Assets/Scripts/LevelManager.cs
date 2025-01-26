@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
 
     public void RemoveItemNeeded(ItemGO item)
     {
+        Debug.Log("Collected in level manager");
         itemNeeded.Remove(item.matType);
         CheckIfWon();
     }
