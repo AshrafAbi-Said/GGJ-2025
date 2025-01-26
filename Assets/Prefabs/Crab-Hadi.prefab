@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 5014152843874393301}
   - component: {fileID: 5137356804444646347}
   m_Layer: 3
-  m_Name: Crab
+  m_Name: Crab-Hadi
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
