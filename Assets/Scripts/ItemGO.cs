@@ -71,6 +71,8 @@ public class ItemGO : MonoBehaviour
         {
             levelManager.RemoveItemNeeded(this);
             other.GetComponent<BuildingGO>().collectItem(this);
+
+            Destroy(gameObject);
         }
     }
 
