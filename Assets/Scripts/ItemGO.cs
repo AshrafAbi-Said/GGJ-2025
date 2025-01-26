@@ -10,6 +10,8 @@ public class ItemGO : MonoBehaviour
     
     public bool fallThroughBubbles;
 
+    private LevelManager levelManager;
+
     public enum MaterialType
     {
         Shell,
@@ -29,6 +31,8 @@ public class ItemGO : MonoBehaviour
         SetType(matType);
         fallThroughBubbles = false;
         isGrabbed = false;
+
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,21 @@ public class ItemGO : MonoBehaviour
                 collision.transform.GetComponent<BubbleGO>().itemOnBubble = this;
             }
 
+        }
+
+        //if (!isGrabbed && collision.gameObject.tag == "Building")
+        //{
+        //    levelManager.RemoveItemNeeded(this);
+        //    collision.gameObject.GetComponent<BuildingGO>().collectItem(this);
+        //}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isGrabbed && other.tag == "Building")
+        {
+            levelManager.RemoveItemNeeded(this);
+            other.GetComponent<BuildingGO>().collectItem(this);
         }
     }
 
