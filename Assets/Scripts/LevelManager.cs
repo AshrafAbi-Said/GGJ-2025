@@ -1,11 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] List<ItemGO> itemsToAddToLevel;
     [SerializeField] ItemSpawner itemSpawner;
     [SerializeField] List<ItemGO.MaterialType> itemNeeded;
+    [SerializeField] GameObject winCam;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject roof;
+    [SerializeField] GameObject canvas;
 
     int shellCount = 0;
     int canCount = 0;
@@ -15,6 +20,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        winCam.SetActive(false);
 
         List<ItemGO> randomItemsList = new List<ItemGO>();
         while(itemsToAddToLevel.Count>0)
@@ -60,7 +66,21 @@ public class LevelManager : MonoBehaviour
         if(itemNeeded.Count == 0)
         {
             Debug.Log("You Win!");
+
+            StartCoroutine(Win());
         }
+    }
+
+    private IEnumerator Win()
+    {
+        canvas.SetActive(false);
+        player.transform.GetChild(1).gameObject.SetActive(false);
+        player.transform.GetChild(2).gameObject.SetActive(false);
+        winCam.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        roof.SetActive(true);
     }
 
     private void CheckItemCount(ItemGO.MaterialType matType)
