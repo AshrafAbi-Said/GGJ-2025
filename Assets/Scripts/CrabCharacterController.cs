@@ -5,9 +5,6 @@ public class CrabCharacterController : MonoBehaviour
 {
     [SerializeField] private float playerForwardForce;
     [SerializeField] private float maxPlayerSpeedGrounded;
-    [SerializeField] private float maxPlayerSpeedFalling;
-    [SerializeField] private float groundDrag;
-    [SerializeField] private float airDrag;
     [SerializeField] private float playerHeight;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float throwHeight;
@@ -16,7 +13,6 @@ public class CrabCharacterController : MonoBehaviour
     private Vector3 moveDir;
     //private float jumpVal;
     private Rigidbody rb;
-    private float timeSinceFalling;
 
     private bool groundedPlayer;
     private float gravityValue = Physics.gravity.y;
@@ -28,8 +24,6 @@ public class CrabCharacterController : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.maxLinearVelocity = maxPlayerSpeedGrounded;
-
-        timeSinceFalling = 0;
     }
 
     void Update()
@@ -61,6 +55,11 @@ public class CrabCharacterController : MonoBehaviour
         //    }
 
         //}
+
+        rb.linearVelocity = new Vector3(
+            Mathf.Clamp(rb.linearVelocity.x, -maxPlayerSpeedGrounded, maxPlayerSpeedGrounded),
+            rb.linearVelocity.y,
+            Mathf.Clamp(rb.linearVelocity.z, -maxPlayerSpeedGrounded, maxPlayerSpeedGrounded));
 
         Debug.Log("Crab weight: " + weight);
 
