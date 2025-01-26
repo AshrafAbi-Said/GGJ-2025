@@ -951,6 +951,7 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   - {fileID: 1262030730}
+  - {fileID: 1663796380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1388113156
@@ -967,9 +968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerForwardForce: 20
   maxPlayerSpeedGrounded: 99999
-  maxPlayerSpeedFalling: 9999
-  groundDrag: 0
-  airDrag: 0
   playerHeight: 1
   jumpHeight: 15
   throwHeight: 2
@@ -1297,11 +1295,11 @@ Transform:
   m_GameObject: {fileID: 1663796376}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23962282, y: -0.063976355, z: 0.015826732, w: 0.9686266}
-  m_LocalPosition: {x: 1, y: 11.727057, z: -7.5371695}
+  m_LocalPosition: {x: 1, y: 4.0070577, z: -7.5371695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1388113154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663796384
 MonoBehaviour:
@@ -1590,4 +1588,3 @@ SceneRoots:
   - {fileID: 1996385971}
   - {fileID: 168072326}
   - {fileID: 606859542}
-  - {fileID: 1663796380}

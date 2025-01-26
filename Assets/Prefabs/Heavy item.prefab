@@ -123,6 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matType: 0
+  spawnChance: 0
+  isGrabbed: 0
+  itemWeight: 0
   fallThroughBubbles: 0
 --- !u!54 &3544359163347748752
 Rigidbody:
@@ -149,5 +152,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
